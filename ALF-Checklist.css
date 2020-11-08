@@ -1,0 +1,379 @@
+html, body, section, div, h1, h2, p, ol, ul, li, input, label, button, table {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+}
+body {
+	font-family: Arial;
+	font-size: 100%;
+	width: 100%;
+	margin: 0 auto;
+/*	The following styles will fix the footer to the bottom of the page (but not when it's scrolled),
+	but messes with the positoning of the tooltips when the width of the body < 100%:
+*/
+	min-height: 100%;
+	position: relative;
+}
+header {
+	font-size: .6em;
+	text-align: center;
+	width: 100%;
+	padding: 1.5em 0;
+	position: fixed;
+	top: 0;
+	white-space: nowrap;
+	z-index: 1;
+}
+footer {
+	font-size: .6em;
+	text-align: center;
+	width: 100%;
+	padding: 1em 0;
+	line-height: 2em;
+	/*	The following styles will fix the footer to the bottom of the page (but not when it's scrolled),
+	but messes with the positioning of the tooltips when the width of the body < 100%
+	(#innerContainer padding-bottom must match footer height when fixing footer to bottom of the page):
+	*/
+	position: absolute;
+	bottom: 0;
+	height: 5.5em;
+}
+#innerContainer {
+	/* padding-bottom must match footer height when fixing footer to bottom of the page */
+	padding: 6em 0 5.5em 0;
+}
+#form p {
+	font-size: 1em;
+	padding: 0 0.5em 0.5em 0.5em;
+}
+#form {
+	display: block;
+}
+#output {
+	display: none;
+}
+h1 {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 0 .5em;
+}
+header p {
+	font-size: 1.1em;
+	margin: 0 1em;
+}
+h2 {
+	font-size: 1.2em;
+	font-weight: normal;
+	padding-bottom: 0.3em;
+	padding-left: 0.5em;
+}
+input {
+	float: left;
+	position: relative;
+	top: .2em;
+	left: .5em;
+}
+label {
+	display: block;
+	padding-left: 2em;
+}
+ol, ul {
+	list-style-type: none;
+	padding-bottom: 1em;
+}
+li {
+	padding: 0.8em;
+	line-height: 1.3em;
+	background: rgb(240,240,240);
+	border-top: 1px solid white;
+	border-bottom: 1px solid rgb(200,200,200);
+}
+li:first-child {
+	border-top: 1px solid rgb(200,200,200);
+}
+table {
+	font-size: .9em;
+	margin: 0 0.5em 1.5em 0.5em;
+	border: 1px solid;
+	border-collapse: collapse;
+}
+th, td {
+	padding: .5em;
+	vertical-align: top;
+	text-align: left;
+	line-height: 1.5em;
+	border-bottom: 1px solid;
+}
+button {
+	border: 0;
+	padding: 1.3em;
+	margin: .5em 1em .5em 1em;
+	font-size: .8em;
+	cursor: pointer;
+}
+#disclaimer {
+	display: none;
+}
+small {
+	font-size: 1em;
+	white-space: pre;
+}
+.clearfix {
+	height: 1px;
+	clear: both;
+}
+.header {
+	padding: .5em;
+	cursor: pointer;
+}
+.block {
+	max-height: 0;
+	overflow: hidden;
+	border-bottom: 1px solid rgb(200,200,200);
+	transition: max-height .25s ease-in-out;
+	clear: both;
+}
+/* The following style is used to hide all nodes within the expanding sections until each is opened */
+.block > * {
+	display: none;
+}
+.click {
+	font-size: .8em;
+	padding: .5em 1em .5em .4em;
+	background: url('down-arrow.png') no-repeat right;
+	background-size: 10px 9px;
+	float: right;
+}
+.reason {
+	font-size: .8em;
+	margin-left: .5em;
+}
+#output p {
+	font-size: 0.9em;
+	margin-bottom: 0.5em;
+	padding-left: 1em;
+}
+#output ol {
+	padding: 0;
+}
+#progressContainer {
+	font-size: 0.8em;
+	width: 90%;
+	height: 1.2em;
+	background: rgb(240,240,240);
+	border: 1px solid rgb(120,120,120);
+	border-radius: 0.2em;
+	margin: 0.5em 0 1em 1em;
+}
+#progress {
+	height: 1.2em;
+	transition: width .25s ease-in-out;
+}
+#percentBar {
+	padding-left: 1em;
+	line-height: 1.2em;
+	font-weight: bold;
+}
+#clearButton {
+	font-size: 0.7em;
+}
+#screenTextarea {
+	display: block;
+	height: 4em;
+	width: 20em;
+	margin: 1em;
+	font-size: 0.8em;
+	font-family: Arial;
+	resize: none;
+}
+#printTextarea {
+	display: none;
+}
+/*********************
+*****   COLORS   *****
+**********************/
+
+header, footer {
+	background: rgb(0,85,128);
+}
+header, footer, header a, footer a {
+	color: white;
+}
+h2 {
+	color:rgb(13,111,137);
+}
+a {
+	color: rgb(0,85,128);
+}
+a:hover, a:focus {
+	color: rgb(171,232,243);
+}
+.tooltipOF {
+	color: rgb(65,177,194);
+	border-color: rgb(65,177,194);
+}
+.tooltipOF:focus, .tooltipOF:hover {
+	color: rgb(171,232,243);
+	border-color: rgb(171,232,243);
+}
+table, th, td {
+	border-color: rgb(0,85,128);
+}
+tr:nth-child(odd) {
+	background: rgb(210,210,210);
+}
+button {
+	background: rgb(14,111,137);
+	color: white;
+}
+button:focus, button:hover {
+	background: rgb(65,177,194);
+	color: rgb(14,111,137);
+}
+
+
+@media only screen and (min-width: 480px) {
+	header {
+		position: static;
+		text-align: left;
+	}
+	header {
+		font-size: 1em;
+	}
+	footer {
+		font-size: .8em;
+		line-height: 1.5em;
+		height: 4em;
+	}
+	#innerContainer {
+		padding: .5em .5em 5em .5em;
+	}
+	#form h2, #form p {
+		padding-left: 0;
+	}
+	ul {
+		list-style: square;
+		margin-left: 1.5em;
+	}
+	li {
+		padding: 0 0 0.8em 0;
+		border: 0;
+		background: none;
+	}	
+	li:first-child {
+		border: 0;
+	}
+	button {
+		padding: 0.8em;
+	}
+	#screenTextarea {
+		width: 30em;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	body {
+		width: 90%;
+	}
+/*	The following style corrects for the messed up positioning (when the width of the body is < 100%)
+	due to the styles that fix the footer to the bottom of the page (but not when it's scrolled):
+*/
+	.tooltipTarget {
+		margin-left: -3em;
+	}
+}
+
+@media print {
+	body {
+		font-size: 80%;
+	}
+	h1, h2, p, a {
+		color: black;
+	}
+	h1, h2 {
+		font-weight: bold;
+	}
+	header {
+		margin: 1em 2em;
+		background: none;
+		color: black;
+		font-size: 1em;
+	}
+	#disclaimer {
+		display: block;
+	}
+	header a {
+		color: black;
+	}
+	a {
+		text-decoration: none;
+	}
+	header {
+		position: static;
+	}
+	#innerContainer {
+		padding: .5em;
+		margin: 0 2em;
+	}
+	ul {
+		list-style: square;
+		margin-left: 2em;
+	}
+	li, #output li {
+		padding: 0;
+		background: none;
+		border: 0;
+	}
+	li:first-child {
+		border: 0;
+	}
+	table {
+		border-color: black;
+	}
+	th, td {
+		border-bottom-color: black;
+	}
+	tr:nth-child(odd) {
+		background: none;
+	}
+	.tooltipOF {
+		color: black;
+		border: 0;
+	}
+	footer {
+		display: none;
+	}
+	button {
+		display: none;
+		background: transparent;
+		color: transparent;
+		margin: 0;
+		padding: 0;
+	}
+	.block {
+		border: 0;
+	}
+	.click {
+		display: none;
+	}
+	.reason {
+		display: none;
+	}
+	#progressContainer {
+		display: none;
+		background: transparent;
+		overflow: hidden;
+		border: 0;
+		height: 0;
+		margin: 0;
+	}
+	#printTextarea {
+		display: block;
+		width: 30em;
+	}
+	#screenTextarea {
+		display: none;
+	}
+}

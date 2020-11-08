@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0" />
+	<meta name='apple-web-app-capable' content='yes' />
+	<link type='text/css' rel='apple-touch-icon' href='ALFSG-web-app-icon.jpg' />
+	<!--[if lt IE 9]>
+		<script src="html5shiv.js"></script>
+	<![endif]-->
+	<link rel='stylesheet' href='TooltipOF.css' type='text/css'>
+	<link rel='stylesheet' href='ALF-Checklist.css' type='text/css'>
+	<script type='text/javascript' src='respond.min.js'></script>
+	<title>ALFChecklist</title>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-60364330-3', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	
+</head>
+<body>
+	<header>
+		<p id='disclaimer'>DO NOT PLACE IN THE MEDICAL RECORD</p>
+		<h1>Acute Liver Failure Checklist</h1>
+		<p>Developed by the <a href='http://www.utsouthwestern.edu/labs/acute-liver' target='_blank' title='ALFSG home page'>Acute Liver Failure Study Group</a></p><br>
+		<p>Published in <a href='http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155500' target='_blank' title='PLoS ONE 2016 ALF checklist manuscript'>PLoS ONE</a><p>
+	</header>
+
+	<div id='innerContainer'>
+
+		<section id='form'>
+			<p><i>A checklist for experienced providers to help manage patients with acute liver failure in the ICU</i></p>
+			<h2>Is this the day of admission to the ICU or a subsequent day?</h2>
+				<ol>
+					<li><input type='radio' name='admission' value='admission' checked='checked' id='admission'><label for='admission' class='radio'>Day of admission</label></li>
+					<li><input type='radio' name='admission' value='subsequent' id='subsequent'><label for='subsequent' class='radio'>Subsequent day</label></li>
+				</ol>
+			<h2>Check all the following that apply to your patient:</h2>
+			<ol>
+				<li><input type='checkbox' name='apap' id='apap'><label for='apap'>Suspected acetaminophen overdose</label></li>
+				<li><input type='checkbox' name='abrupt' id='abrupt'><label for='abrupt'>Abrupt deterioration in mental status</label></li>
+				<li><input type='checkbox' name='sodium' id='sodium'><label for='sodium'>Serum sodium &lt;145 mMol/L</label></li>
+				<li><input type='checkbox' name='intubated' id='intubated'><label for='intubated'>Intubated</label></li>
+				<li><input type='checkbox' name='agitated' id='agitated'><label for='agitated'>Agitated or in pain</label></li>
+				<li><input type='checkbox' name='hypothermia' id='hypothermia'><label for='hypothermia'>Spontaneous hypothermia (34-37 &deg;C)</label></li>
+				<li><input type='checkbox' name='encephalopathy' id='encephalopathy'><label for='encephalopathy'><span class='tooltipOF' tooltipOF-title='Encephalopathy Grades' tooltipOF-content='grade 1: sleep cycle reversal, mild changes in attentiveness, grade 2: confusion, asterixis, grade 3: obtundation, grade 4: coma, loss of reflexes'>Encephalopathy grade III/IV</span></label></li>
+				<li><input type='checkbox' name='hyperventilating' id='hyperventilating'><label for='hyperventilating'>Spontaneously hyperventilating</label></li>
+				<li><input type='checkbox' name='progression' id='progression'><label for='progression'>Progression of encephalopathy</label></li>
+				<li><input type='checkbox' name='sirs' id='sirs'><label for='sirs'><span class='tooltipOF' tooltipOF-title='SIRS Criteria' tooltipOF-content='Any 2 of the following: temp: &lt;36 &deg;C or &gt;38 &deg;C, heart rate: &gt;90&#47;min, resp rate &gt;20&#47;min or PaCO2 &lt;32 mmHg, WBC: &lt;4000&#47;cu mm, &gt;12,000&#47;cu mm, or 10&#37; bands'>SIRS</span></label></li>
+				<li><input type='checkbox' name='deterioration' id='deterioration'><label for='deterioration'>Clinical deterioration</label></li>
+				<li><input type='checkbox' name='listed' id='listed'><label for='listed'>Listed for transplant</label></li>
+				<li><input type='checkbox' name='hypotension' id='hypotension'><label for='hypotension'>Mean arterial pressure (MAP) &lt;75 mm Hg despite volume repletion</label></li>
+				<li><input type='checkbox' name='oliguria' id='oliguria'><label for='oliguria'>Oliguria</label></li>
+				<li><input type='checkbox' name='creatinine' id='creatinine'><label for='creatinine'>Rise in creatinine &gt;0.3 mg/dL</label></li>
+				<li><input type='checkbox' name='ammonia' id='ammonia'><label for='ammonia'>Ammonia &gt;150 &#181;M</label></li>
+				<li><input type='checkbox' name='volume' id='volume'><label for='volume'>Volume overload</label></li>
+				<li><input type='checkbox' name='ich' id='ich'><label for='ich'>Established/suspected intracranial hypertension</label></li>
+				<li><input type='checkbox' name='bleeding' id='bleeding'><label for='bleeding'>Clinically significant bleeding</label></li>
+				<li><input type='checkbox' name='procedure' id='procedure'><label for='procedure'>Planned invasive procedure</label></li>
+			</ol>
+			<button id='submitButton' type='button' role='button'>Submit</button>
+			<button id='resetButton' type='button' role='button'>Reset form</button>
+		</section> <!--end of form -->
+
+		<div id='output' style='display: none'>
+			<section>
+				<h2 id='allALF' class='header'>The following should be done in all cases of ALF: <span id='allALFClick' class='click'></span></h2>
+				<p>Completed: <span id='percentText'></span></p>
+				<div id='allALFBlock' class='block'>
+					<div id='progressContainer'><div id='progress'><div id='percentBar'></div></div>
+					</div>
+						<ol>
+							<li><input type='checkbox' class='progress' id='neuroChecks'><label for='neuroChecks'>Neuro checks every 1-2 hours</label></li>
+							<li><input type='checkbox' class='progress' id='hob'><label for='hob'>Head of the bed at 30&deg;</label></li>
+							<li><input type='checkbox' class='progress' id='neutral'><label for='neutral'>Head in neutral position</label></li>
+							<li><input type='checkbox' class='progress' id='stimulation'><label for='stimulation'>Minimize stimulation (tracheal suctioning, chest physiotherapy, sternal rubbing)</label></li>						
+							<li><input type='checkbox' class='progress' id='cultures'><label for='cultures'>CXR and surveillance cultures (blood, urine, sputum) on admission and every 24-48 hrs</label></li>
+							<li><input type='checkbox' class='progress' id='glucose1'><label for='glucose1'>Monitor blood glucose every 1-2 hours</label></li>
+							<li><input type='checkbox' class='progress' id='nephrotoxins'><label for='nephrotoxins'>Avoid nephrotoxic drugs (aminoglycosides, NSAIDs, neomycin, etc) and IV contrast</label></li>
+							<li><input type='checkbox' class='progress' id='dvt'><label for='dvt'>DVT prophylaxis (sequential compression device) despite coagulopathy; avoid heparin</label></li>
+							<li><input type='checkbox' class='progress' id='ppi'><label for='ppi'>PPI for stress ulcer prophylaxis</label></li>
+							<li><input type='checkbox' class='progress' id='glucose2'><label for='glucose2'>Maintain plasma glucose between 80 and 180 mg/dL with dextrose or insulin, as appropriate</label></li>
+							<li><input type='checkbox' class='progress' id='enteral'><label for='enteral'>Begin enteral feeding as early as possible (PO or NG)</label></li>
+							<li><input type='checkbox' class='progress' id='communicate'><label for='communicate'>Communicate with: 1) intensivist and/or transplant hepatologist, 2) nurse, 3) patient’s family</label></li>
+						</ol>
+					<button id='clearButton'>Clear check boxes</button>
+				</div> <!-- allALFBlock -->
+			</section>
+
+			<section id='diagnosis'>
+				<h2 id='diagnosticStudies' class='header'>The following diagnostic studies should be done in <span class='tooltipOF' tooltipOF-content='These are common and sometimes treatable etiologies that can be missed even if another etiology, such as acetaminophen overdose, is highly suspected'>all cases of ALF</span>: <span id='diagnosticStudiesClick' class='click'></span></h2>
+				<div id='diagnosticStudiesBlock' class='block'>
+					<table>
+						<tr><th>Drug / toxin</th><td>Obtain 6-month medication/toxin/ingestion history including OTC supplements, herbals, wild mushrooms, weight loss drugs<br>Urine and serum toxicology screens<br>Acetaminophen level</td></tr>
+						<tr><th>Viral</th><td>Anti-HAV IgM<br>HBsAg, anti-HBc IgM, HBV DNA (quantitative)<br>Anti-HCV, HCV RNA</td></tr>
+						<tr><th>Autoimmune</th><td>Antinuclear antibody<br>Anti-smooth muscle antibody/anti-actin antibody<br>Immunoglobulin G</td></tr>
+						<tr><th>Vascular / Budd-Chiari / Ischemia</th><td>Abdominal ultrasound with Doppler</td></tr>
+						<tr><th>Wilson</th><td>Check for hemolytic anemia (high indirect bilirubin), low alkaline phosphatase, renal failure, acidosis</td></tr>
+					</table>
+				</div> <!-- diagnosticStudiesBlock -->
+
+				<h2 id='diagnosticTests' class='header'>Consider the following diagnostic tests: <span id='diagnosticTestsClick' class='click'></span></h2>
+					<div id='diagnosticTestsBlock' class='block'>
+						<table>
+							<tr><th>Viral</th><td>Anti-HEV<br>HSV DNA<br>EBV DNA<br>CMV DNA<br>Anti-HDV/HDV RNA</td></tr>
+							<tr><th>Autoimmune</th><td>Anti-liver/kidney microsomal antibody<br>Liver biopsy</td></tr>
+							<tr><th>Vascular / Budd Chiari / Ischemia</th><td>CT/MRI<br>Assess for hypercoagulable state including search for malignancy<br>Interventional radiology consultation<br>Echocardiography/ECG</td></tr>
+							<tr><th>Wilson</th><td>Ceruloplasmin<br>24-hour urine for copper<br>Serum copper<br>Ophthalmology consultation to look for Kayser-Fleischer rings</td></tr>
+							<tr><th>Acute Fatty Liver of Pregnancy / HELLP</th><td>&beta;-HCG<br>Obstetrics consultation</td></tr>
+							<tr><th>Malignancy</th><td>CT/MRI<br>Liver biopsy</td></tr>
+							<tr><th>Indeterminate</th><td>Liver biopsy</td></tr>
+						</table>
+					</div> <!-- diagosticTestsBlock -->
+
+				<h2 id='specificTherapies' class='header'>Consider the following specific therapies: <span id='specificTherapiesClick' class='click'></span></h2>
+					<div id='specificTherapiesBlock' class='block'>
+						<table>
+							<tr><th>Acetaminophen toxicity</th><td>N-acetylcysteine (NAC)</td></tr>
+							<tr><th>Mushroom poisoning</th><td>Charcoal, NAC, penicillin G and/or <span class='tooltipOF' tooltipOF-content='Silibinin is not FDA approved'>silibinin</span></td></tr>
+							<tr><th>HBV</th><td>Entecavir</td></tr>
+							<tr><th>HSV</th><td>Acyclovir</td></tr>
+							<tr><th>Autoimmune</th><td>Corticosteroids</td></tr>
+							<tr><th>Budd Chiari</th><td>Anticoagulation, TIPS</td></tr>
+							<tr><th>Wilson</th><td>Consider early <span class='tooltipOF' tooltipOF-title='Continuous Renal Replacement Therapy (CRRT)' tooltipOF-content='CRRT preferred over intermittent HD even if hemodynamically stable'>CRRT</span></td></tr>
+							<tr><th>Acute Fatty Liver of Pregnancy / HELLP</th><td>Early delivery</td></tr>
+						</table>
+					</div> <!-- specificTherapiesBlock -->
+			</section> <!-- end of diagnosis section -->
+
+			<section id='systems'>
+				<h2 id='specificPatient' class='header'>The following items are recommended <em>based on your specific patient:</em> <span id='specificPatientClick' class='click'></span></h2>
+					<div id='specificPatientBlock' class='block'>
+						<ul>
+							<li id='nac'>N-acetylcysteine (NAC) IV until INR &lt;1.5 or resolution of encephalopathy<span class='tooltipOF reason' tooltipOF-content='For all patients with ALF and encephalopathy grade I&#47;II regardless of etiology, and for all cases of suspected acetaminophen toxicity (see Lee et al. Gastroenterology 2009;137(2):856-64)'>why?</span></li>
+							<li id='headCT'>Head CT to look for intracranial hemorrhage<span class='tooltipOF reason' tooltipOF-content='Abrupt deterioration in mental status'>why?</span></li>
+							<li id='hypertonic'>Consider using hypertonic saline for prophylaxis of intracranial hypertension to <span class='tooltipOF' tooltipOF-title='Hypertonic saline' tooltipOF-content='Carefully monitor rate of Na rise; discuss serum Na goal with healthcare team if patient on Continuous Renal Replacement Therapy'>maintain serum Na between 145-150 mMol/L</span><span class='tooltipOF reason' tooltipOF-content='Serum sodium &lt;145 mMol/L'>why?</span></li>
+							<li id='sedating'>Avoid sedating medications (benzodiazepines, narcotics, central-acting anti-emetics)<span class='tooltipOF reason' tooltipOF-content='Sedating medications can interfere wiith assessment of mental status and are not necessary unless patient is intubated, agitated or in pain'>why?</span></li>
+							<li id='propofol'>Use propofol and/or fentanyl as sedatives/analgesic of choice<span class='tooltipOF reason' tooltipOF-content='Intubation, agitation or pain can increase intracranial pressure'>why?</span></li>
+							<li id='warm'>Do not warm patient<span class='tooltipOF reason' tooltipOF-content='Hypothermia can lower intracranial pressure and warming patients who are spontaneously hypothermic can precipitate cerebral herniation'>why?</span></li>
+							<li id='mannitol'>Consider mannitol 0.25-0.5 g/kg IV q6 hours if serum osmolality &lt;320 mOsm/L or hypertonic saline boluses for treatment of suspected intracranial hypertension<span class='tooltipOF reason' tooltipOF-content='Advanced grades of encephalopathy (III/IV) are associated with a higher risk of intracranial hypertension'>why?</span></li>
+							<li id='icp'>Consider <span class='tooltipOF' tooltipOF-title='Intracranial pressure monitoring' tooltipOF-content='Goal intracranial pressure &lt;25 mm Hg, goal cerebral perfusion pressure 50-80 mm Hg'>intracranial pressure monitoring</span><span class='tooltipOF reason' tooltipOF-content='Advanced grades of encephalopathy (III/IV) are associated with a higher risk of intracranial hypertension'>why?</span></li>
+							<li id='intubate'>Intubate (prefer low tidal volume ventilation to avoid acute lung injury)<span class='tooltipOF reason' tooltipOF-content='Patients with advanced grades of encephalopathy (III/IV) can rapidly decline and are often unable to protect their airway; intubation and sedation can limit intracranial hypertension'>why?</span></li>
+							<li id='ventilation'>Do not correct spontaneous hyperventilation<span class='tooltipOF reason' tooltipOF-content='Hyperventilation-induced hypocapnia induces cerebral vasoconstriction, decreases ICP and may improve cerebrovascular autoregulation'>why?</span></li>
+							<li id='antibiotics'>Consider prophylactic broad-spectrum antibiotics<span class='tooltipOF reason' tooltipOF-content='Indications for antibiotic prophylaxis include 1) progression of encephalopathy or grade III/IV encephalopathy or 2) SIRS or 3) clinical deterioration or 4) patient listed for transplant'>why?</span></li>
+							<li id='vasopressors'>Begin <span class='tooltipOF' tooltipOF-title='Vasopressors' tooltipOF-content='Prefer norepinephrine over epinephrine or vasopressin; MAP goal >75 mmHg'>vasopressors</span><span class='tooltipOF reason' tooltipOF-content='A MAP goal of &gt; 75 mm Hg is recommended to increase cerebral perfusion pressure in the setting of possible intracranial hypertension; norepinephrine may provide a more consistent and predictable increase  in cerebral perfusion than dopamine, and epinephrine may compromise hepatic blood flow in patients with ALF'>why?</span></li>
+							<li id='hydrocortisone'>Consider trial of hydrocortisone<span class='tooltipOF reason' tooltipOF-content='Relative adrenal insufficiency occurs frequently in patients with ALF; moderate doses (200–300 mg/day) of hydrocortisone have been shown to improve the vasopressor response to norepinephrine in hypotensive patients with ALF'>why?</span></li>
+							<li id='renal'>Consider renal consultation/early hemodialysis line placement<span class='tooltipOF reason' tooltipOF-content='ALF is often complicated by acute kidney injury and patients with ALF should be started on CRRT before developing classical indications for renal replacement therapy'>why?</span></li>
+							<li id='crrt'>Initiate <span class='tooltipOF' tooltipOF-title='Continuous Renal Replacement Therapy (CRRT)' tooltipOF-content='CRRT preferred over intermittent HD even if hemodynamically stable'>CRRT</span><span class='tooltipOF reason' tooltipOF-content='Indications for CRRT in patients with ALF include 1) oliguria or 2) rise in creatinine &gt;0.3 mg/dL or 3) ammonia &gt; 150 &#181;M or 4) volume overload or 5) established/suspected intracranial hypertension; CRRT causes less abrupt volume shifts and has a lower risk of exacerbating intracranial hypertension compared to intermittent hemodialysis'>why?</span></li>
+							<li id='inr'>Do not correct INR in absence of clinically significant bleeding<span class='tooltipOF reason' tooltipOF-content='In the absence of clinically significant bleeding, INR is not associated with bleeding risk in patients with ALF'>why?</span></li>
+							<li id='coagulopathy'>Correct thrombocytopenia, hypofibrinogenemia and coagulopathy<span class='tooltipOF reason' tooltipOF-content='In patients with clinically significant bleeding'>why?</span></li>
+							<li id='thrombocytopenia'>Correct thrombocytopenia and hypofibrinogenemia in preparation for planned invasive procedure<span class='tooltipOF reason' tooltipOF-content='In the absence of clinically significant bleeding, INR does not predict bleeding risk in patients with ALF; however, thrombocytopenia and hypofibrinogenemia should be corrected prior to a planned invasive procedure'>why?</span></li>
+							<li id='consult'>Consult transplant center/transplant hepatologist early<span class='tooltipOF reason' tooltipOF-content='Patient is not currently listed for transplant'>why?</span></li>
+							<li id='evaluation'>Begin transplant evaluation per center protocol if patient is a potential transplant candidate<span class='tooltipOF reason' tooltipOF-content='Patient is not currently listed for transplant'>why?</span></li>
+							<li id='listing'>Consider listing for transplant if all <span class='tooltipOF' tooltipOF-title='Status 1A Criteria' tooltipOF-content='1. Onset of encephalopathy within 8 weeks of first symptoms of liver disease, 2. In the ICU, 3. a) INR >2 or b) intubated or c) on CRRT'>criteria for Status 1A</span> are met, in consultation with transplant team<span class='tooltipOF reason' tooltipOF-content='Patient is not currently listed for transplant'>why?</span></li>
+						</ul>
+					</div> <!-- specificPatientBlock -->
+			</section> <!--end of systems list -->
+			<textarea id='screenTextarea' placeholder='You can enter notes here before printing'></textarea>
+			<div id='printTextarea'></div>
+			<button id='printButton' type='button' role='button'>Print</button>
+			<button id='returnButton' type='button' role='button'>Return to form</button>
+		</div> <!--end of output -->
+	</div> <!--end of innerContainer -->
+
+	<footer>
+		<p><small><a href='http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155500' target='_blank' title='PLoS ONE 2016 ALF checklist manuscript'>PLoS ONE manuscript</a>           <a href='./ALF-Checklist.pdf' target='_blank' title='ALF Checklist (PDF)'>ALF Checklist (PDF)</a></small></p>
+		<p><small><a href='http://youtu.be/H6yyTA-yNqc' title='view instructional video' target='_blank'>instructional video</a>        <a href='https://www.ncbi.nlm.nih.gov/pubmed/?term=27176033+22213561+19524577+17901832%5Buid%5D' target='_blank'>suggested further reading</a>        <a href='mailto:alfchecklist@gmail.com?subject=ALF Checklist Web App Feedback/Comments'>feedback/comments</a></small></p>
+		<p><small>web app by <a href='https://orenfixmd.com' target='_blank' title='OrenFixMD.com'>Oren Fix, MD</a>   &copy; <script>document.write(new Date().getFullYear());</script>. All rights reserved</small></p>
+	</footer>
+	<script type='text/javascript' src='TooltipOF.js'></script>
+	<script src='ALF-Checklist.js' type='text/javascript'></script>
+</body>
+</html>

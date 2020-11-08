@@ -1,0 +1,72 @@
+/*  Oren Fix's Tooltip Plug-in
+    12/31/2013
+*/
+
+   /******************************************************
+   /                                                     /
+   /             OREN FIX'S TOOLTIP PLUG-IN              /
+   /                                                     /
+   /      Add .tooltipOF class to div or span that       /
+   /      includes plug-in.                              /
+   /                                                     /
+   /      Make sure containing element has position      /
+   /      set to 'relative'.                             /
+   /                                                     /
+   /      Use 'tooltipOF-title' and 'tooltipOF-content'  /
+   /      attributes for tooltip title and               /
+   /      contents, respectively.                        /
+   /                                                     /
+   /                       STYLES                        /
+   /      .tooltipOF       =  Div containing tooltip     /
+   /                          link                       /
+   /      .tooltipTarget   =  Div containing tooltip     /
+   /      .tooltipTitle    =  Div containing tooltip     /
+   /                          title                      /
+   /      .tooltipContent  =  Div containing tooltip     /
+   /                          content                    /
+   /                                                     /
+   /*****************************************************/
+
+
+.tooltipOF {
+   cursor: pointer;
+   display: inline;
+   border-bottom: 1px dotted black;
+}
+
+.tooltipOF:focus, .tooltipOF:hover, .tooltip:active {
+   border-bottom: 1px dotted black;
+}
+
+.tooltipTarget {
+   position: absolute;
+   margin: 0 1em;
+   max-width: 20em;
+   color: black;
+   font-size: .8em;
+   border: 1px solid rgb(119,119,119);
+   background: rgb(240,240,240);
+   box-shadow: 2px 2px 2px rgb(200,200,200);
+   border-radius: .3em;
+   cursor: pointer;
+   overflow: hidden;
+   z-index: 10;
+   visibility: hidden;
+   opacity: 0;
+   display: block;
+   transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.tooltipTitle {
+   font-size: 1.2em;
+   font-weight: bold;
+   padding: .5em;
+   background: rgb(210,210,210);
+}
+
+.tooltipContent {
+   font-size: 1.1em;
+   line-height: 1.2em;
+   padding: .5em;
+}
